@@ -14,10 +14,11 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/
 
 COPY . /app
-
 WORKDIR /app
 
 RUN npm install -g pm2
+
+EXPOSE 4000/udp
 
 RUN chmod +x docker/entrypoint.sh
 ENTRYPOINT docker/entrypoint.sh
