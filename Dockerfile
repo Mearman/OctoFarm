@@ -16,7 +16,9 @@ RUN rm -rf /var/lib/apt/lists/
 COPY . /app
 WORKDIR /app
 
+RUN npm update
 RUN npm install -g pm2
+RUN npm install
 
 EXPOSE 4000/udp
 
